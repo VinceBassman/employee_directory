@@ -6,8 +6,8 @@ class PositionResource < ApplicationResource
     scope.where(["title LIKE ?", "#{value}%"])
   end
 
-  belongs_to :department,
-    scope: -> { Department.all },
-    foreign_key: :department_id,
-    resource: DepartmentResource
+  belongs_to :employee,
+             scope: -> { Employee.all },
+             foreign_key: :employee_id,
+             resource: EmployeeResource
 end

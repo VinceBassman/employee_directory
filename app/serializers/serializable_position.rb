@@ -3,5 +3,5 @@ class SerializablePosition < JSONAPI::Serializable::Resource
 
   attribute :title
 
-  belongs_to :department
+  belongs_to :employee
 end

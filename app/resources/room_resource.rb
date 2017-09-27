@@ -6,6 +6,11 @@ class RoomResource < ApplicationResource
   type :rooms
   # Associate to a Model object so we know how to persist.
   model Room
+
+  belongs_to :department,
+             scope: -> { Department.all },
+             foreign_key: :department_id,
+             resource: DepartmentResource
   # Customize your resource here. Some common examples:
   #
   # === Allow ?filter[name] query parameter ===

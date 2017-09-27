@@ -5,6 +5,8 @@ class SerializableRoom < JSONAPI::Serializable::Resource
 
   attribute :name
 
+  belongs_to :department
+
   # Add attributes here to ensure they get rendered, .e.g.
   #
   # attribute :name

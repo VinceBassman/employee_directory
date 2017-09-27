@@ -1,11 +1,7 @@
 class EmployeesController < ApplicationController
   jsonapi resource: EmployeeResource
 
-  strong_resource :employee do
-    has_many :positions, destroy: true, disassociate: true do
-      belongs_to :department, destroy: true, disassociate: true
-    end
-  end
+  strong_resource :employee
 
   before_action :apply_strong_params, only: [:create, :update]
 

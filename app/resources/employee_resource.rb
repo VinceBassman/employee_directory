@@ -2,6 +2,11 @@ class EmployeeResource < ApplicationResource
   type :employees
   model Employee
 
+  belongs_to :department,
+             scope: -> { Department.all },
+             foreign_key: :department_id,
+             resource: DepartmentResource
+
   has_many :positions,
     scope: -> { Position.all },
     foreign_key: :employee_id,

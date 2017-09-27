@@ -3,6 +3,7 @@ class SerializableDepartment < JSONAPI::Serializable::Resource
 
   attribute :name
 
-  has_many :rooms
   has_many :employees
+  has_many :rooms
+
 end
